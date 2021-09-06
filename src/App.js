@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './Components/styles/App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import ListaDePais from './Components/CountriesList';
+import CountryDetails from './Components/CountryDetails';
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <div className="screenAdjustment">
+        <ListaDePais />
+        <Route path="/:cca3" component={CountryDetails} />
+      </div>
+    </BrowserRouter>
   );
 }
 

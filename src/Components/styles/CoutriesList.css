@@ -1,0 +1,7 @@
+.navBar{
+  width: 250px;
+  height: 900px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  border: gray;
+}
